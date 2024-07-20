@@ -1,0 +1,79 @@
+{
+  "name": "planificacion-academica",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^4.5.0",
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/vue3": "^6.1.15",
+    "@mdi/font": "5.9.55",
+    "@mdi/js": "^7.4.47",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.3",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "roboto-fontface": "*",
+    "vue": "^3.4.33",
+    "vue-router": "^4.0.0",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuetify": "^3.6.13",
+    "vuex": "^4.1.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-vuetify": "~2.5.8",
+    "vue-loader": "^17.3.1",
+    "webpack": "^5.93.0",
+    "webpack-plugin-vuetify": "^2.0.0-alpha.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-console": "off",
+      "no-debugger": "off"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
