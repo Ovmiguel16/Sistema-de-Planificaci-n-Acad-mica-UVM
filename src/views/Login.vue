@@ -112,8 +112,7 @@ export default {
         if (response.data.role === this.role) {
           localStorage.setItem('token', 'faketoken');
           localStorage.setItem('role', this.role);
-          alert(`Has iniciado sesión como ${this.role}`);
-          this.$router.push('/dashboard');
+          window.location.href = "/dashboard"
         } else {
           alert('Rol incorrecto para este usuario');
         }
@@ -199,6 +198,7 @@ body {
 .btn-primary {
   background-color: #4c7cff;
   border: none;
+  padding: 8px 12px;
   border-radius: 25px;
 }
 .btn-link {

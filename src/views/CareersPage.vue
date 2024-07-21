@@ -11,8 +11,8 @@
             <h5 class="card-title">{{ career.title }}</h5>
             <p class="card-text">{{ career.description }}</p>
           </div>
-          <div class="card-footer bg-transparent border-top-0">
-            <a href="#" class="btn btn-link">Más información</a>
+          <div class="card-footer bg-transparent border-top-0 separacion">
+            <a href="#" class="btn-primary btn-link">Más información</a>
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@ export default {
   data() {
     return {
       careers: [
-        { id: 1, title: 'Ingeniería de Sistemas', description: 'Forma parte de una de las carreras más demandadas del mercado...', image: 'path_to_image' },
-        { id: 2, title: 'Derecho', description: 'Conviértete en un profesional del derecho con nuestra carrera...', image: 'path_to_image' },
-        { id: 3, title: 'Administracion', description: 'Únete a nuestra prestigiosa facultad de Administracion...', image: 'path_to_image' }
+        { id: 1, title: 'Ingeniería de Sistemas', description: 'Forma parte de una de las carreras más demandadas del mercado...', image: '/carrera1.jpg' },
+        { id: 2, title: 'Derecho', description: 'Conviértete en un profesional del derecho con nuestra carrera...', image: '/carrera2.jpg' },
+        { id: 3, title: 'Administracion', description: 'Únete a nuestra prestigiosa facultad de Administracion...', image: '/carrera3.jpg' }
       ]
     }
   }
@@ -36,5 +36,18 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos personalizados para la página de carreras */
+.btn-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+
+}
+.separacion {
+  margin-bottom: .7rem;
+}
+.btn-link:hover {
+  color: #fff;
+}
 </style>

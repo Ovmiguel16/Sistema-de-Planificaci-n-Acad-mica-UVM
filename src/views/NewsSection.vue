@@ -9,8 +9,8 @@
             <h5 class="card-title">{{ news.title }}</h5>
             <p class="card-text">{{ news.description }}</p>
           </div>
-          <div class="card-footer bg-transparent border-top-0">
-            <a href="#" class="btn btn-link">Leer más</a>
+          <div class="card-footer bg-transparent border-top-0 separacion">
+            <a href="#" class="btn-primary btn-link">Leer más</a>
           </div>
         </div>
       </div>
@@ -24,9 +24,9 @@ export default {
   data() {
     return {
       newsItems: [
-        { id: 1, title: 'Dra. Jackelin y Dra. Fiorella', description: 'En la facultad de derecho estamos creciendo...', image: 'path_to_image' },
-        { id: 2, title: 'Nuestros graduados de este año', description: 'Conoce nuestra primera promoción de graduados de este año...', image: 'path_to_image' },
-        { id: 3, title: 'Conexión con empresas de alto valor', description: 'Te ayudamos a conectar con empresas que estén relacionadas con tu carrera...', image: 'path_to_image' }
+        { id: 1, title: 'Dra. Jackelin y Dra. Fiorella', description: 'En la facultad de derecho estamos creciendo...', image: '/img1.jpeg' },
+        { id: 2, title: 'Nuestros graduados de este año', description: 'Conoce nuestra primera promoción de graduados de este año...', image: '/img2.jpeg' },
+        { id: 3, title: 'Conexión con empresas de alto valor', description: 'Te ayudamos a conectar con empresas que estén relacionadas con tu carrera...', image: '/img3.jpeg' }
       ]
     };
   }
@@ -34,5 +34,18 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos personalizados para la sección de noticias */
+.btn-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+
+}
+.separacion {
+  margin-bottom: .7rem;
+}
+.btn-link:hover {
+  color: #fff;
+}
 </style>

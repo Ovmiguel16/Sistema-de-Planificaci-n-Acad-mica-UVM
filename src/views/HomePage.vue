@@ -7,7 +7,7 @@
         <h1 class="display-4 mb-3">Uni Valle del Momboy, construyendo tu futuro</h1>
         <p class="lead mb-4">La universidad Valle del Momboy está sumamente complacida de invitarte a que te unas a nuestra matrícula estudiantil...</p>
         <a href="/login" class="btn btn-primary btn-lg me-2">Inicia sesión</a>
-        <a href="/about" class="btn btn-outline-secondary btn-lg">Leer más →</a>
+        <a href="/news" class="btn btn-outline-secondary btn-lg">Leer más →</a>
       </div>
     </div>
 
@@ -37,8 +37,8 @@
             <h5 class="card-title">{{ item.title }}</h5>
             <p class="card-text">{{ item.description }}</p>
           </div>
-          <div class="card-footer bg-transparent border-top-0">
-            <a href="#" class="btn btn-link">Leer más</a>
+          <div class="card-footer bg-transparent border-top-0 separacion">
+            <a href="#" class="btn-primary btn-link">Leer más</a>
           </div>
         </div>
       </div>
@@ -52,9 +52,9 @@ export default {
   data() {
     return {
       newsItems: [
-        { id: 1, title: 'Dra. Jackelin y Dra. Fiorella', description: 'En la facultad de derecho estamos creciendo...', image: 'path_to_image' },
-        { id: 2, title: 'Nuestros graduados de este año', description: 'Conoce nuestra primera promoción de graduados de este año...', image: 'path_to_image' },
-        { id: 3, title: 'Conexión con empresas de alto valor', description: 'Te ayudamos a conectar con empresas que estén relacionadas con tu carrera...', image: 'path_to_image' }
+        { id: 1, title: 'Dra. Jackelin y Dra. Fiorella', description: 'En la facultad de derecho estamos creciendo...', image: '/img1.jpeg' },
+        { id: 2, title: 'Nuestros graduados de este año', description: 'Conoce nuestra primera promoción de graduados de este año...', image: '/img2.jpeg' },
+        { id: 3, title: 'Conexión con empresas de alto valor', description: 'Te ayudamos a conectar con empresas que estén relacionadas con tu carrera...', image: '/img3.jpeg' }
       ]
     }
   }
@@ -68,5 +68,24 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+.btn-primary {
+  background-color: #4c7cff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.btn-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+
+}
+.separacion {
+  margin-bottom: .7rem;
+}
+.btn-link:hover {
+  color: #fff;
 }
 </style>
