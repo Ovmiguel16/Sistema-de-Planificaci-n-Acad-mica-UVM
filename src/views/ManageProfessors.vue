@@ -149,7 +149,7 @@ export default {
     },
     async fetchProfessors() {
       try {
-        const response = await axios.get('/profesores');
+        const response = await axios.get('/profesores');      
         this.profesores = response.data;
       } catch (error) {
         this.toast().error('Error al recuperar los profesores');

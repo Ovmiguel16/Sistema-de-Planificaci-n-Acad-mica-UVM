@@ -2,12 +2,15 @@
   <div class="container my-5">
 
     <!-- Hero Section -->
-    <div class="row text-center mb-5">
-      <div class="col-md-8 mx-auto">
+    <div class="text-center mb-5 content-main">
+      <div class="col-md-8 ">
         <h1 class="display-4 mb-3">Uni Valle del Momboy, construyendo tu futuro</h1>
         <p class="lead mb-4">La universidad Valle del Momboy está sumamente complacida de invitarte a que te unas a nuestra matrícula estudiantil...</p>
         <a href="/login" class="btn btn-primary btn-lg me-2">Inicia sesión</a>
         <a href="/news" class="btn btn-outline-secondary btn-lg">Leer más →</a>
+      </div>
+      <div class='content-image'>
+        <img alt='imagen' src='/img4.png' />
       </div>
     </div>
 
@@ -31,7 +34,7 @@
     <h2 class="text-center mb-4">Noticias destacadas</h2>
     <div class="row">
       <div class="col-md-4 mb-4" v-for="item in newsItems" :key="item.id">
-        <div class="card h-100">
+        <div class="card h-100 cards">
           <img :src="item.image" class="card-img-top" alt="News Image" style="height: 200px; object-fit: cover;">
           <div class="card-body">
             <h5 class="card-title">{{ item.title }}</h5>
@@ -62,6 +65,9 @@ export default {
 </script>
 
 <style scoped>
+.cards {
+  background: #EFF6FF;
+}
 .icon-box {
   display: flex;
   flex-direction: column;
@@ -87,5 +93,14 @@ export default {
 }
 .btn-link:hover {
   color: #fff;
+}
+
+.content-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-image {
+
 }
 </style>

@@ -2,10 +2,8 @@
   <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center">
     <div class="card login-card w-75 shadow">
       <div class="row no-gutters">
-        <div class="col-md-6 login-image d-none d-md-block">
-          <div class="login-image-text">
-            <h2 class="text-white">Inicia sesión si eres docente o director y comienza a enseñar</h2>
-          </div>
+        <div class="col-md-6 login-image d-none d-md-block">                  
+          <img src='/img5.png'  />
         </div>
         <div class="col-md-6">
           <div class="login-form p-5">
@@ -173,8 +171,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .login-image {
-  background: url('https://path-to-your-image/Inicio%20de%20Sesion.png') no-repeat center center;
-  background-size: cover;
+  background: #BFDBFE;
   border-radius: 15px 0 0 15px;
   display: flex;
   align-items: center;
