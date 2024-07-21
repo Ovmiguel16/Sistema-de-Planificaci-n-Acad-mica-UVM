@@ -32,4 +32,7 @@ Como lo anteriormente dicho, para trabajar con el código se empleó la herramie
 <li>Luego, se abre otra terminal para el frontend y se ejecuta el comando <i> "npm run serve" </i> para correrlo. Debe aparecer un enlace al puerto donde se encuentra el proyecto.</li>
 <li>Para poder ingresar se deben colocar los datos: <i> "juan.perez@ejemplo.com y clave: password123" </i>; los cuales son el usuario de rol director por defecto que va a permitir ingresar al sistema. Una vez dentro se puede registrar más usuarios.</li>
 </ol>
+<br>
+<h2>Link del video en Youtube</h2>
+https://youtu.be/P_hRifaMNiI?si=yPK_CGDMgjYkRuLV
 <h2>FIN</h2>
