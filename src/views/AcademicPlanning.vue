@@ -1,35 +1,49 @@
 <template>
   <div class="container my-5">
-    <h1 class="mb-4">Consulta de Planificación Académica</h1>
-    <div class="mb-3">
-      <label for="profesor" class="form-label">Selecciona un Profesor:</label>
-      <select id="profesor" class="form-select" v-model="selectedProfessorId" @change="fetchAcademicPlanning">
-        <option value="">Selecciona un Profesor</option>
-        <option v-for="profesor in profesores" :key="profesor.id" :value="profesor.id">
-          {{ profesor.nombre }} {{ profesor.apellido }}
-        </option>
-      </select>
+    <h1 class="mb-4 text-center">Consulta de Planificación Académica</h1>
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="profesor" class="form-label">Selecciona un Profesor:</label>
+          <select id="profesor" class="form-select" v-model="selectedProfessorId" @change="fetchAcademicPlanning">
+            <option value="">Selecciona un Profesor</option>
+            <option v-for="profesor in profesores" :key="profesor.id" :value="profesor.id">
+              {{ profesor.nombre }} {{ profesor.apellido }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="seccion" class="form-label">Selecciona una Sección:</label>
+          <select id="seccion" class="form-select" v-model="selectedSectionId" @change="fetchAcademicPlanning">
+            <option value="">Selecciona una Sección</option>
+            <option v-for="seccion in secciones" :key="seccion.id" :value="seccion.id">
+              {{ seccion.nombre }}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="seccion" class="form-label">Selecciona una Sección:</label>
-      <select id="seccion" class="form-select" v-model="selectedSectionId" @change="fetchAcademicPlanning">
-        <option value="">Selecciona una Sección</option>
-        <option v-for="seccion in secciones" :key="seccion.id" :value="seccion.id">
-          {{ seccion.nombre }}
-        </option>
-      </select>
+    <div v-if="eventos.length > 0" class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Eventos Académicos</h2>
+        <ul class="list-group list-group-flush">
+          <li v-for="evento in eventos" :key="evento.id" class="list-group-item">
+            <div class="fw-bold">{{ evento.tipo }} - {{ evento.titulo }} ({{ formatDate(evento.fecha) }} {{ evento.hora }})</div>
+            <div>Profesor: {{ evento.profesor_nombre }} {{ evento.profesor_apellido }}</div>
+            <div>Materia: {{ evento.materia_nombre }}</div>
+            <div>Sección: {{ evento.seccion_nombre }}</div>
+            <div>Descripción: {{ evento.descripcion }}</div>
+            <div>Ubicación: {{ evento.ubicacion }}</div>
+          </li>
+        </ul>
+      </div>
     </div>
-    <h2 class="my-4">Eventos Académicos</h2>
-    <ul class="list-group">
-      <li v-for="evento in eventos" :key="evento.id" class="list-group-item">
-        <div class="fw-bold">{{ evento.tipo }} - {{ evento.titulo }} ({{ formatDate(evento.fecha) }} {{ evento.hora }})</div>
-        <div>Profesor: {{ evento.profesor_nombre }} {{ evento.profesor_apellido }}</div>
-        <div>Materia: {{ evento.materia_nombre }}</div>
-        <div>Sección: {{ evento.seccion_nombre }}</div>
-        <div>Descripción: {{ evento.descripcion }}</div>
-        <div>Ubicación: {{ evento.ubicacion }}</div>
-      </li>
-    </ul>
+    <div v-else class="text-center my-4">
+      <p>No hay eventos académicos para mostrar.</p>
+    </div>
+    <div class="text-center mt-4">
+      <button @click="goBack" class="btn btn-secondary">Volver al Inicio</button>
+    </div>
   </div>
 </template>
 
@@ -66,7 +80,6 @@ export default {
         const response = await axios.get(url);
         console.log('Received data:', response.data);
 
-        // Verifica si response.data es un arreglo o un solo objeto
         if (Array.isArray(response.data)) {
           this.eventos = response.data.map(evento => ({
             ...evento,
@@ -108,6 +121,9 @@ export default {
       if (isNaN(date.getTime())) return 'Fecha inválida';
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return date.toLocaleDateString(undefined, options);
+    },
+    goBack() {
+      this.$router.push('/dashboard');
     }
   },
   created() {
@@ -128,5 +144,18 @@ h1, h2 {
 
 .list-group-item {
   margin-bottom: 10px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
 }
 </style>

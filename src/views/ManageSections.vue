@@ -2,6 +2,8 @@
   <div class="container">
     <h1>Gestión de Secciones</h1>
     <button class="btn btn-primary mb-3" @click="openModal">Agregar Sección</button>
+    <button class="btn btn-secondary mb-3" @click="volverInicio">Volver a Inicio</button>
+
 
     <!-- Modal Formulario -->
     <div class="modal fade" id="sectionModal" tabindex="-1" aria-labelledby="sectionModalLabel" aria-hidden="true">
@@ -171,6 +173,9 @@ export default {
       if (this.modalInstance) {
         this.modalInstance.hide();
       }
+    },
+    volverInicio() {
+        this.$router.push('/dashboard');
     },
     resetForm() {
       this.id = null;

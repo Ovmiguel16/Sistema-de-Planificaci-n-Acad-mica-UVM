@@ -39,11 +39,7 @@
             <i class="fas fa-stream me-2"></i> Trimestres
           </router-link>
         </li>
-        <li class="nav-item mt-3">
-          <router-link class="nav-link d-flex align-items-center" to="/logout">
-            <i class="fas fa-sign-out-alt me-2"></i> Salir
-          </router-link>
-        </li>
+      
       </ul>
     </div>
 
@@ -98,10 +94,6 @@ export default {
   border-right: 1px solid #ccc;
   transition: width 0.3s ease;
   overflow-y: auto;
-}
-
-.sidebar:hover {
-  width: 280px;
 }
 
 .sidebar h3 {

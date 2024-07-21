@@ -108,9 +108,9 @@ export default {
           password: this.password
         });
         if (response.data.role === this.role) {
-          localStorage.setItem('token', 'faketoken');
+          localStorage.setItem('token', true);
           localStorage.setItem('role', this.role);
-          window.location.href = "/dashboard"
+          window.location.href = "/dashboard"        
         } else {
           alert('Rol incorrecto para este usuario');
         }

@@ -1,7 +1,10 @@
 <template>
-  <div class="container">
-    <h1>Gestión de Profesores</h1>
-    <button class="btn btn-primary mb-3" @click="openAddModal">Agregar Profesor</button>
+  <div class="container my-5">
+    <h1 class="mb-4 text-center">Gestión de Profesores</h1>
+    <div class="d-flex justify-content-between mb-3">
+      <button class="btn btn-primary" @click="openAddModal">Agregar Profesor</button>
+      <button class="btn btn-secondary" @click="volverInicio">Volver a Inicio</button>
+    </div>
 
     <!-- Modal Formulario -->
     <div class="modal fade" id="professorModal" tabindex="-1" aria-labelledby="professorModalLabel" aria-hidden="true">
@@ -138,6 +141,14 @@ export default {
         try {
           // eslint-disable-next-line no-unused-vars
           const response = await axios[method](url, professorData);
+          await axios[method]('/usuarios', {
+          nombre: this.nombre,
+          apellido: this.apellido,
+          correo: this.correo,
+          telefono: this.telefono,
+          rol: 'profesor',
+          contrasena:  this.contrasena
+        });
           this.toast().success(this.editMode ? 'Profesor actualizado correctamente' : 'Profesor agregado correctamente');
           this.fetchProfessors();
           this.closeModal();
@@ -149,7 +160,7 @@ export default {
     },
     async fetchProfessors() {
       try {
-        const response = await axios.get('/profesores');      
+        const response = await axios.get('/profesores');
         this.profesores = response.data;
       } catch (error) {
         this.toast().error('Error al recuperar los profesores');
@@ -185,6 +196,9 @@ export default {
         this.toast().error('Todos los campos son obligatorios');
       }
       return valid;
+    },
+    volverInicio() {
+      this.$router.push('/dashboard');
     }
   },
   created() {
@@ -193,8 +207,27 @@ export default {
 };
 </script>
 
-<style>
-/* Asegúrate de incluir los estilos de Bootstrap en tu proyecto */
+<style scoped>
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css';
 @import 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css';
+
+.container {
+  max-width: 800px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.d-flex {
+  justify-content: space-between;
+}
+
+.modal-content {
+  border-radius: 0.5rem;
+}
+
+.list-group-item {
+  margin-bottom: 10px;
+}
 </style>

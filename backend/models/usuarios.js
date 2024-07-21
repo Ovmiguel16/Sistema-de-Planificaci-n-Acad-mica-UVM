@@ -9,12 +9,17 @@ const getUsuarios = (callback) => {
 };
 
 const createUsuario = (data, callback) => {
-  const { nombre, apellido, correo, telefono, rol } = data;
-  const sql = 'INSERT INTO usuarios (nombre, apellido, correo, telefono, rol) VALUES (?, ?, ?, ?, ?)';
-  db.query(sql, [nombre, apellido, correo, telefono, rol], (err, result) => {
-    if (err) return callback(err);
-    callback(null, result);
-  });
+  const { nombre, apellido, correo, telefono, rol, contrasena } = data;
+  const sql =
+    "INSERT INTO usuarios (nombre, apellido, correo, telefono, rol, contrasena) VALUES (?, ?, ?, ?, ?, ?)";
+  db.query(
+    sql,
+    [nombre, apellido, correo, telefono, rol, contrasena],
+    (err, result) => {
+      if (err) return callback(err);
+      callback(null, result);
+    }
+  );
 };
 
 const verifyUsuario = (email, password, callback) => {

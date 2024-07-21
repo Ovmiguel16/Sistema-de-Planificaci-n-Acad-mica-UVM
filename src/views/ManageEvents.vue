@@ -5,8 +5,10 @@
     <button class="btn btn-primary mb-3" @click="openModal">
       {{ editMode ? 'Editar Evento' : 'Agregar Evento' }}
     </button>
+    <button class="btn btn-secondary mb-3" @click="volverInicio">Volver a Inicio</button>
+
     <!-- Botón para desplegar las tarjetas de resumen -->
-    <button class="btn btn-secondary mb-3" @click="toggleSummary">
+    <button class="btn mb-3 color-bbtn" @click="toggleSummary">
       Calendario de Eventos
     </button>
 
@@ -298,6 +300,9 @@ export default {
       }
       return valid;
     },
+    volverInicio() {
+        this.$router.push('/dashboard');
+    },
     formattedDate(dateStr) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(dateStr).toLocaleDateString(undefined, options);
@@ -356,5 +361,9 @@ export default {
 
 .card-body {
   padding: 1rem;
+}
+.color-bbtn {
+  background: green !important;
+  color: white !important;
 }
 </style>
