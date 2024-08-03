@@ -43,13 +43,13 @@ CREATE TABLE `profesores` (
 
 -- Insertar datos en 'profesores'
 INSERT INTO `profesores` VALUES 
-(6,'salvator','tore','bermudez@gmail.com','03423423'),
-(12,'anthonella','linares','antho@gmail.com','123213123'),
-(19,'salvatore','bermudez','as@gmai.com','04120434234'),
-(20,'antonio','bermudez','2@gmail.com','04120434234'),
-(23,'salvatore','tore','30@gmail.com','0412043423411'),
-(25,'luis juan','bermudez','sheintru@gmail.com','04120434234'),
-(27,'Luisa','bermudez','helany.bermudez22@gmail.com','04120434234');
+(1,'salvator','tore','bermudez@gmail.com','03423423'),
+(2,'anthonella','linares','antho@gmail.com','123213123'),
+(3,'salvatore','bermudez','as@gmai.com','04120434234'),
+(4,'antonio','bermudez','2@gmail.com','04120434234'),
+(5,'salvatore','tore','30@gmail.com','0412043423411'),
+(6,'luis juan','bermudez','sheintru@gmail.com','04120434234'),
+(7,'Luisa','bermudez','helany.bermudez22@gmail.com','04120434234');
 
 -- Crear la tabla 'materias'
 CREATE TABLE `materias` (
@@ -65,9 +65,9 @@ CREATE TABLE `materias` (
 
 -- Insertar datos en 'materias'
 INSERT INTO `materias` VALUES 
-(3,'asd12321','mate4','matematicas',12),
-(5,'xpw3e6','salvatore','asdsadasd',6),
-(8,'xpw3e614543','Estadistica','desarrollo de estadistica',27);
+(1,'asd12321','mate4','matematicas',1),
+(2,'xpw3e6','salvatore','asdsadasd',2),
+(3,'xpw3e614543','Estadistica','desarrollo de estadistica',3);
 
 -- Crear la tabla 'secciones'
 CREATE TABLE `secciones` (
@@ -82,9 +82,9 @@ CREATE TABLE `secciones` (
 
 -- Insertar datos en 'secciones'
 INSERT INTO `secciones` VALUES 
-(1,'quinto ','a',6),
-(2,'quinto a','a',6),
-(5,'trimestre a','asdasd',27);
+(1,'quinto ','a',1),
+(2,'quinto a','a',2),
+(3,'trimestre a','asdasd',3);
 
 -- Crear la tabla 'trimestres'
 CREATE TABLE `trimestres` (
@@ -98,7 +98,7 @@ CREATE TABLE `trimestres` (
 
 -- Insertar datos en 'trimestres'
 INSERT INTO `trimestres` VALUES 
-(3,'trimestre c','2024-07-20','2024-10-20','lunes 21 dia de la independencia ');
+(1,'trimestre c','2024-07-20','2024-10-20','lunes 21 dia de la independencia ');
 
 -- Crear la tabla 'usuarios'
 CREATE TABLE `usuarios` (
@@ -140,11 +140,11 @@ CREATE TABLE `eventos` (
 
 -- Insertar datos en 'eventos'
 INSERT INTO `eventos` VALUES 
-(10,'Especial','corte de notas','corte de notas año 2024','2024-07-19','11:47:00','tempe',6,3,1),
-(12,'encuentro','videoconferencia','asdasd','2024-07-19','22:16:00','tempe',19,5,1),
-(13,'evaluación','asdasd','asdasd','2024-07-19','22:22:00','tempe',23,3,1),
-(14,'Especial','asdasd','asdasd','2024-07-19','22:30:00','asdas',20,3,1),
-(16,'evaluación','evalucion 1.1','evacualicion','2024-07-29','11:21:00','estovacuy',27,8,1);
+(1,'Especial','corte de notas','corte de notas año 2024','2024-07-19','11:47:00','tempe',1,1,1),
+(2,'encuentro','videoconferencia','asdasd','2024-07-19','22:16:00','tempe',1,1,1),
+(3,'evaluación','asdasd','asdasd','2024-07-19','22:22:00','tempe',1,1,1),
+(4,'Especial','asdasd','asdasd','2024-07-19','22:30:00','asdas',1,1,1),
+(5,'evaluación','evalucion 1.1','evacualicion','2024-07-29','11:21:00','estovacuy',2,2,2);
 
 -- Crear la tabla 'acceso_directores'
 CREATE TABLE `acceso_directores` (
@@ -187,5 +187,5 @@ CREATE TABLE `acceso_profesores` (
 
 -- Insertar datos en 'acceso_profesores'
 INSERT INTO `acceso_profesores` VALUES 
-(20,'lu1','1234',20),
-(25,'admin','12345',25);
+(1,'lu1','1234',1),
+(2,'admin','12345',2);

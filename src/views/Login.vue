@@ -25,7 +25,7 @@
                 </select>
               </div>
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button type="submit" class="btn btn-primary" id="boton_login">Ingresar</button>
                 <a href="#" class="btn-link">Olvidé mi contraseña</a>
               </div>
               <div class="text-center mt-4">

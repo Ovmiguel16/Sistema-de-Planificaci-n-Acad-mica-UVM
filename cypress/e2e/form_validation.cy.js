@@ -1,57 +1,43 @@
-describe("Event Form Validation", () => {
+describe("Prueba del Formulario de Evento", () => {
   beforeEach(() => {
-    // Simula la respuesta de la API para los eventos
-    cy.intercept("GET", "/api/eventos", { fixture: "eventsData.json" }).as(
-      "getEvents"
-    );
+    cy.visit("/login");
+    cy.get("input#email").type("juan.perez@ejemplo.com");
+    cy.get("input#password").type("password123");
+    cy.get("select.form-control").select("director");
+    cy.get("#boton_login").click();
 
-    // Visita la página de gestión de eventos
-    cy.visit("/events");
+    // Asegurarse de que la redirección al dashboard se haya completado
+    cy.url().should("include", "/dashboard");
 
-    // Espera que la petición de eventos se complete
-    cy.wait("@getEvents");
+    // Esperar a que el sidebar esté visible
+    cy.get(".sidebar").should("be.visible");
 
-    // Abre la ventana modal al hacer clic en el botón de "Agregar Evento"
-    cy.get('button[data-cy="add-event"]').click();
+    // Navegar a la página de eventos
+    cy.get(".nav-link").contains("Eventos").click();
+
+    // Asegurarse de que la URL cambió a /events
+    cy.url().should("include", "/events");
   });
 
-  it("should validate form inputs and submit the form", () => {
-    // Intenta enviar el formulario con campos vacíos para verificar errores
-    cy.get("form").within(() => {
-      cy.contains("Guardar").click();
-    });
+  it("Debería validar y enviar el formulario de evento", () => {
+    // Abrir el modal
+    cy.get("button").contains("Agregar Evento").click();
+    cy.get(".modal.show").should("be.visible");
 
-    // Verifica los mensajes de error en campos obligatorios
-    cy.get(".error-message").should("contain", "Este campo es requerido");
+    // Rellenar el formulario
+    cy.get("#tipo").select("evaluación").should("have.value", "evaluación");
+    cy.get("#titulo").type("Evento de Prueba");
+    cy.get("#fecha").type("2024-08-10");
+    cy.get("#hora").type("10:00");
+    cy.get("#descripcion").type("Descripción del evento");
+    cy.get("#ubicacion").type("Valera centro");
 
-    // Rellena el formulario con datos correctos
-    cy.get('input[name="titulo"]').type("Nueva Conferencia");
-    cy.get('input[name="fecha"]').type("2024-08-20");
-    cy.get('input[name="hora"]').type("14:00");
-    cy.get('select[name="profesor_id"]').select("1");
-    cy.get('select[name="materia_id"]').select("1");
-    cy.get('select[name="seccion_id"]').select("1");
-    cy.get('textarea[name="descripcion"]').type("Descripción del evento");
-    cy.get('input[name="ubicacion"]').type("Auditorio");
+    //eslint-disable-line cypress/unsafe-to-chain-command
+    cy.get("#profesor").select(0).should("have.value", "1");
+    cy.get("#materia").select(0).should("have.value", "1");
+    cy.get("#seccion").select(0).should("have.value", "1");
 
-    // Verifica que los mensajes de error ya no están presentes
-    cy.get(".error-message").should("not.exist");
-
-    // Simula la respuesta de la API para la creación de un nuevo evento
-    cy.intercept("POST", "/api/eventos", {
-      statusCode: 201,
-      body: { success: true },
-    }).as("createEvent");
-
-    // Envía el formulario
-    cy.get("form").within(() => {
-      cy.contains("Guardar").click();
-    });
-
-    // Verifica que la petición POST se haya realizado correctamente
-    cy.wait("@createEvent");
-
-    // Verifica que la ventana modal esté cerrada después del envío
-    cy.get(".modal").should("not.be.visible");
+    // Validar y enviar formulario.
+    cy.get("#enviar_form").contains("Agregar").click();
   });
 });

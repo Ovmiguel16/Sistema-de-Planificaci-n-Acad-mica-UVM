@@ -4,11 +4,25 @@
       "titulo": "Conferencia de Matemáticas",
       "fecha": "2024-08-15",
       "hora": "15:00",
-      "profesor_id": 1,
-      "materia_id": 1,
-      "seccion_id": 1,
+      "profesor_nombre": "Fran",
+      "profesor_apellido": "Gomez",
+      "materia_nombre": "Matematica",
+      "seccion_nombre": "Sección C",
       "descripcion": "Una conferencia sobre el impacto de las matemáticas en la vida diaria.",
       "ubicacion": "Auditorio principal"
+    },
+    {
+      "id": 1,
+      "tipo": "Conferencia",
+      "titulo": "Conferencia de Ciencia",
+      "fecha": "2024-08-10",
+      "hora": "10:00",
+      "descripcion": "Una conferencia sobre avances científicos.",
+      "profesor_nombre": "Juan",
+      "profesor_apellido": "Pérez",
+      "materia_nombre": "Ciencias",
+      "seccion_nombre": "Sección A",
+      "ubicacion": "Aula 101"
     }
 ]
   
