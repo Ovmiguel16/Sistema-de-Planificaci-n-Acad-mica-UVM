@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "tipo": "Clase",
+      "titulo": "Introducción a la Matemática",
+      "fecha": "2024-08-10",
+      "hora": "10:00",
+      "profesor_nombre": "Juan",
+      "profesor_apellido": "Pérez",
+      "materia_nombre": "Matemáticas",
+      "seccion_nombre": "101",
+      "descripcion": "Clase de introducción a las matemáticas básicas.",
+      "ubicacion": "Aula 07"
+    },
+    {
+        "id": 2,
+        "tipo": "Clase",
+        "titulo": "Introducción a la Robotica",
+        "fecha": "2024-08-10",
+        "hora": "11:00",
+        "profesor_nombre": "Luis",
+        "profesor_apellido": "Pacheco",
+        "materia_nombre": "Robotica",
+        "seccion_nombre": "101",
+        "descripcion": "Clase de introducción a la robotica.",
+        "ubicacion": "Aula 11"
+    }
+]
+  
