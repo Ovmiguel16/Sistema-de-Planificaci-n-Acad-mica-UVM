@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "titulo": "Conferencia de Matemáticas",
+      "fecha": "2024-08-15",
+      "hora": "15:00",
+      "profesor_id": 1,
+      "materia_id": 1,
+      "seccion_id": 1,
+      "descripcion": "Una conferencia sobre el impacto de las matemáticas en la vida diaria.",
+      "ubicacion": "Auditorio principal"
+    }
+]
+  
